@@ -7,9 +7,12 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class {{cookiecutter.controller}}Controller {
+    private {{cookiecutter.controller}}Service service;
 
-@Autowired
-    {{cookiecutter.controller}}Service service;
+    @Autowired
+    {{cookiecutter.controller}}Controller({{cookiecutter.controller}}Service service){
+        this.service = service;
+    }
 
     @RequestMapping(method = RequestMethod.GET, path = "/helloWorld")
     public String helloWorld(){
@@ -18,10 +21,9 @@ public class {{cookiecutter.controller}}Controller {
 
     @RequestMapping(method = RequestMethod.GET, path = "/helloWorldService")
     public String helloWorldService(){
-
         {{cookiecutter.controller}}Bean bean = new {{cookiecutter.controller}}Bean();
         service.sendMessage(bean);
 
         return bean.getMessage();
-        }
     }
+}

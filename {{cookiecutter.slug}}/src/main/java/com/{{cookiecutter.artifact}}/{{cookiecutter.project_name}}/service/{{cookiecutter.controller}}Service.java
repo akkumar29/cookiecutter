@@ -1,9 +1,9 @@
 package com.{{cookiecutter.artifact}}.{{cookiecutter.project_name}}.service;
 
 import com.{{cookiecutter.artifact}}.{{cookiecutter.project_name}}.bean.{{cookiecutter.controller}}Bean;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class {{cookiecutter.controller}}Service {
 
     public {{cookiecutter.controller}}Bean sendMessage({{cookiecutter.controller}}Bean {{cookiecutter.controller}}){
